@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<!--Jacob's Website-->
+ <html>
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--<link rel="stylesheet" href="/lib/w3.css">-->
+   <title> Jacobs Photography</title>
+        <link rel="stylesheet" type="text/css" href="indexstylesheet.css">
+   </head>
+    <body>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="classreq.html">Class Req</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Photos</a>
+          <div class="dropdown-content">
+            <a href="Urban.html">Urban</a>
+            <a href="Nature.html">Nature</a>
+            <a href="photoshopfun.html">Photoshop Fun</a>
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="w3-left">Some of My Favorites</h2>
+
+      <audio autoplay loop>
+        <source src="music/samwise-by-nightsky.mp3" type="audio/mpeg">
+      </audio>
+
+  <div class="w3-container">
+
+  </div>
+
+  <div class="w3-content w3-display-container" style="max-width:800px">
+    <img class="mySlides" src="images/americanflag.jpg" style="width:100%">
+    <img class="mySlides" src="images/Gray-Grey.jpg" style="width:100%">
+    <img class="mySlides" src="images/jamessunset.jpg" style="width:100%">
+    <img class="mySlides" src="images/highreadyjames.jpg" style="width:100%">
+    <div class="w3-center w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:95%">
+      <div class=" w3-badge w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+      <div class="w3-badge w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    </div>
+  </div>
+
+  <script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+       dots[i].className = dots[i].className.replace(" w3-white", "");
+    }
+    x[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " w3-white";
+  }
+  var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+  </script>
+
+    </body>
+    </html>
